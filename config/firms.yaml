@@ -1,0 +1,9 @@
+base: https://firms.modaps.eosdis.nasa.gov/api/area/csv
+archive_sources: [VIIRS_SNPP_SP, VIIRS_NOAA20_SP]       # standard processing (counted history)
+nrt_sources: [VIIRS_SNPP_NRT, VIIRS_NOAA20_NRT]          # fills the gap between latest SP and today
+live_sources: [VIIRS_SNPP_NRT, VIIRS_NOAA20_NRT, VIIRS_NOAA21_NRT]  # live watch only
+start_date: "2019-01-01"
+window_days: 5
+min_interval_s: 1.4          # throttle: a 5-day area request costs ~10 transactions; 5000 per 10 min => <= ~430 req/10 min
+city_buffer_km: 3
+workers: 3                   # parallel requests; start spacing still min_interval_s

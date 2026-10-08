@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  248567.7,
+  2541474.0,
+  252567.7,
+  2545474.0
+ ],
+ "bounds_wgs84": [
+  72.547109,
+  22.962549,
+  72.586746,
+  22.999249
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  250567.7,
+  2543474.0
+ ],
+ "site_id": "pirana",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": 33.5,
+ "max_m": 75.09,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2B_42QZL_20261008_0_L2A",
+  "date": "2026-10-08",
+  "cloud_pct": 0.000634,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

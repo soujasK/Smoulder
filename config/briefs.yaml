@@ -1,0 +1,6 @@
+# Bedrock briefs. Verify the model is enabled in your account/region (Bedrock console -> Model access).
+model_id: apac.anthropic.claude-sonnet-4-20250514-v1:0   # cross-region inference profile usable from ap-south-1; override with BEDROCK_MODEL_ID
+region: ap-south-1
+max_regenerations: 2
+max_tokens: 400
+temperature: 0.2

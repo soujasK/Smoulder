@@ -1,0 +1,10 @@
+.atlas-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 20px; padding-bottom: 14px; }
+.atlas-head h1 { font-size: var(--t-40); }
+.atlas-map { width: calc(100% - 2 * var(--gutter)); max-width: calc(1440px - 2 * var(--gutter)); margin: 0 auto; height: 58vh; min-height: 320px; background: var(--night); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-2); border: 1px solid color-mix(in srgb, var(--line) 70%, transparent); position: relative; }
+.atlas-ledger th .tier { margin-left: 4px; }
+.map-label { font-family: var(--sans); font-variation-settings: "wdth" 62; font-stretch: 62%; letter-spacing: .14em; font-size: 11px; color: var(--bone); text-decoration: none; text-shadow: 0 0 3px #F3F2EE, 0 0 3px #F3F2EE, 0 0 6px #F3F2EE; font-weight: 600; }
+.maplibregl-ctrl-scale { background: transparent; border-color: var(--bone); color: var(--bone); font-family: var(--mono); font-size: 10px; }
+.maplibregl-ctrl-attrib { background: rgba(243, 242, 238, .85) !important; color: var(--slate-2); font-size: 10px; }
+.maplibregl-ctrl-attrib a { color: var(--ash); }
+
+.atlas-plan { max-width: 900px; }

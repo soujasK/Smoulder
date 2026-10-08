@@ -1,0 +1,30 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  271315.1,
+  2100744.1,
+  295315.1,
+  2124744.1
+ ],
+ "bounds_wgs84": [
+  72.824977,
+  18.986496,
+  73.055672,
+  19.205808
+ ],
+ "px": 768,
+ "res_m": 31.25,
+ "smoothed_sigma_px": 2.5,
+ "centre_utm": [
+  283315.1,
+  2112744.1
+ ],
+ "site_id": "mumbai",
+ "kind": "city",
+ "extent_m": 24000,
+ "min_m": -0.21,
+ "max_m": 380.54,
+ "vertical_exaggeration": 6,
+ "contour_interval_m": 4,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs."
+}

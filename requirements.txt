@@ -1,0 +1,14 @@
+# Pipeline (local + Lambda container)
+shapely>=2.0
+pyproj>=3.6
+numpy>=1.26
+pydantic>=2.6
+pyyaml>=6
+requests>=2.31
+rasterio>=1.3
+pystac-client>=0.7
+pillow>=10
+scikit-image>=0.22
+boto3>=1.34
+pytest>=8
+scipy

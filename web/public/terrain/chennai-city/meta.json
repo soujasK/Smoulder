@@ -1,0 +1,30 @@
+{
+ "crs": "EPSG:32644",
+ "bounds_utm": [
+  402411.3,
+  1426208.3,
+  434411.3,
+  1458208.3
+ ],
+ "bounds_wgs84": [
+  80.099426,
+  12.899639,
+  80.395419,
+  13.189837
+ ],
+ "px": 768,
+ "res_m": 41.666666666666664,
+ "smoothed_sigma_px": 2.5,
+ "centre_utm": [
+  418411.3,
+  1442208.3
+ ],
+ "site_id": "chennai",
+ "kind": "city",
+ "extent_m": 32000.0,
+ "min_m": -37.11,
+ "max_m": 119.77,
+ "vertical_exaggeration": 6,
+ "contour_interval_m": 4,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs."
+}

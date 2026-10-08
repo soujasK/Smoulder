@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  725530.9,
+  3166567.0,
+  729530.9,
+  3170567.0
+ ],
+ "bounds_wgs84": [
+  77.306492,
+  28.60582,
+  77.348175,
+  28.642598
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  727530.9,
+  3168567.0
+ ],
+ "site_id": "ghazipur",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": 192.98,
+ "max_m": 243.49,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2B_43RGM_20261005_0_L2A",
+  "date": "2026-10-05",
+  "cloud_pct": 5.6e-05,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

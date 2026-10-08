@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32644",
+ "bounds_utm": [
+  418794.4,
+  1450193.0,
+  422794.4,
+  1454193.0
+ ],
+ "bounds_wgs84": [
+  80.250713,
+  13.116983,
+  80.287724,
+  13.153256
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  420794.4,
+  1452193.0
+ ],
+ "site_id": "kodungaiyur",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": -0.11,
+ "max_m": 18.91,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2A_44PMV_20260715_0_L2A",
+  "date": "2026-07-15",
+  "cloud_pct": 0.835508,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

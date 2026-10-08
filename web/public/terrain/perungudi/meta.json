@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32644",
+ "bounds_utm": [
+  414028.2,
+  1430223.5,
+  418028.2,
+  1434223.5
+ ],
+ "bounds_wgs84": [
+  80.207315,
+  12.936291,
+  80.244303,
+  12.972568
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  416028.2,
+  1432223.5
+ ],
+ "site_id": "perungudi",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": -12.15,
+ "max_m": 19.49,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2A_44PMV_20260715_0_L2A",
+  "date": "2026-07-15",
+  "cloud_pct": 0.835508,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

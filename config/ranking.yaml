@@ -1,0 +1,3 @@
+# score = fire_days_last_365 ^ w_fire * log10(1 + people_1km_est) ^ w_people
+w_fire: 1.0
+w_people: 1.0

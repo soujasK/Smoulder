@@ -1,0 +1,40 @@
+:root {
+  /* "Morning haze": light, low-glare surfaces; slate ink; haze blue = air and wind; ember = fire only */
+  --mist: #F3F2EE; --mist-2: #ECEAE4; --mist-3: #E3E1D9; --rule-light: #DCD9D0;
+  --slate: #1F2B33; --slate-2: #56636C; --slate-3: #8A959C;
+  --haze: #4C7C95; --haze-2: #7FA6BA; --haze-soft: #DCE8EE; --haze-wash: #EAF1F4;
+  --paper: #FBFAF7; --paper-2: #F1EEE6; --ink: #141414; --ink-2: #4B4B47; --rule: #CCC5B6;
+  /* ember ramp runs pale -> deep (on a light surface, intensity reads as depth) */
+  --ember-1: #F7E6DA; --ember-2: #EFC3A6; --ember-3: #E3895B; --ember-4: #D2652F; --ember-5: #B04A1E;
+  --wind: var(--haze); /* wind sectors and wind arrows */
+
+  /* legacy names still used by a few components */
+  --night: var(--mist); --night-2: var(--mist-2); --night-3: var(--mist-3); --rule-dark: var(--rule-light);
+  --ash: var(--slate-3); --bone: var(--slate);
+
+  --radius: 8px; --radius-lg: 14px; --gutter: 16px;
+  --shadow-1: 0 1px 2px rgba(31, 43, 51, .05), 0 2px 8px rgba(31, 43, 51, .04);
+  --shadow-2: 0 2px 6px rgba(31, 43, 51, .06), 0 12px 32px rgba(31, 43, 51, .08);
+  --serif: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  --sans: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+  --hi-serif: "Noto Serif Devanagari Variable", "Noto Serif Devanagari", serif;
+  --hi-sans: "Noto Sans Devanagari Variable", "Noto Sans Devanagari", sans-serif;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+
+  /* type scale 12/14/16/20/28/40/72 */
+  --t-12: 12px; --t-14: 14px; --t-16: 16px; --t-20: 20px; --t-28: 28px; --t-40: 40px; --t-72: 72px;
+
+  /* surface roles */
+  --bg: var(--mist); --bg-2: var(--paper); --bg-3: var(--mist-2);
+  --fg: var(--slate); --fg-2: var(--slate-2); --line: var(--rule-light); --line-strong: #C3BFB4;
+  --accent: var(--haze);
+  --focus: var(--haze);
+}
+
+/* Print sheets and [data-surface=paper] use paper tokens */
+[data-surface="paper"] {
+  --bg: var(--paper); --bg-2: var(--paper-2); --bg-3: var(--paper-2);
+  --fg: var(--ink); --fg-2: var(--ink-2); --line: var(--rule); --line-strong: #A9A191;
+  --focus: var(--ember-3);
+}

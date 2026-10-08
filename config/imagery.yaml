@@ -1,0 +1,9 @@
+stac_url: https://earth-search.aws.element84.com/v1
+collection: sentinel-2-l2a
+days_before: 10
+days_after: 10
+max_cloud_pct: 30
+grid_m: 20
+hot_b12_min: 0.5           # heuristic hot-surface threshold on B12 reflectance (label: heuristic)
+dnbr_threshold: 0.27        # burn-like change where dNBR > this (0.27 = moderate-low severity, Key & Benson 2006); landfills change for other reasons too
+pixel_ha: 0.04

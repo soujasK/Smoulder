@@ -1,0 +1,30 @@
+{
+ "crs": "EPSG:32645",
+ "bounds_utm": [
+  634489.6,
+  2480989.7,
+  658489.6,
+  2504989.7
+ ],
+ "bounds_wgs84": [
+  88.306825,
+  22.427776,
+  88.542377,
+  22.646589
+ ],
+ "px": 768,
+ "res_m": 31.25,
+ "smoothed_sigma_px": 2.5,
+ "centre_utm": [
+  646489.6,
+  2492989.7
+ ],
+ "site_id": "kolkata",
+ "kind": "city",
+ "extent_m": 24000,
+ "min_m": -0.93,
+ "max_m": 21.8,
+ "vertical_exaggeration": 6,
+ "contour_interval_m": 4,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs."
+}

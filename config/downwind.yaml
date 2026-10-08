@@ -1,0 +1,7 @@
+# Smoke Days downwind rule (docs/METHOD.md §5). Output tier: MODELLED.
+radius_km: 5.0          # R: skip sites whose polygon edge is farther than this from the point
+window_hours: 6         # H: hours after first detection time on a fire day
+ws_min_ms: 1.0          # below this wind speed the hour is "calm", counted separately
+half_width_deg: 30      # P is downwind if |bearing(site->P) - wind_to| <= this
+min_hours: 1            # downwind hours needed on a fire day to count a Smoke Day
+forecast_hours: 12      # live alerts: forecast horizon

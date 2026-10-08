@@ -1,0 +1,35 @@
+.tier {
+  display: inline-flex; align-items: center; height: 18px; padding: 0 6px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  border-radius: 999px; line-height: 1; white-space: nowrap; vertical-align: middle;
+  color: var(--fg); border: 1px solid var(--fg-2);
+}
+.tier-word { position: relative; }
+.tier-measured { background: var(--slate); color: var(--paper); border-color: var(--slate); }
+.tier-counted { border-style: solid; }
+.tier-estimated { border-style: dashed; }
+.tier-compiled { border-style: dotted; border-width: 1.5px; }
+.tier-modelled {
+  border-color: var(--fg-2);
+  background-image: repeating-linear-gradient(135deg, var(--line-strong) 0 1px, transparent 1px 5px);
+}
+.tier-modelled .tier-word { background: var(--bg); padding: 0 2px; }
+
+.metric { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.metric-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.metric-value { font-size: var(--t-28); line-height: 1.1; color: var(--fg); }
+.metric-big .metric-value { font-size: var(--t-40); }
+.metric-unit { color: var(--fg-2); font-size: var(--t-14); }
+.metric-row .tier { align-self: center; }
+.receipt-btn {
+  width: 18px; height: 18px; border: 1px solid var(--line-strong); border-radius: 999px;
+  font-size: 12px; line-height: 16px; text-align: center; color: var(--fg-2); align-self: center;
+}
+.receipt-btn:hover { color: var(--fg); border-color: var(--fg-2); }
+.receipt {
+  display: grid; grid-template-columns: max-content 1fr; gap: 2px 10px; margin: 6px 0 0; padding: 6px 0 6px 10px;
+  border-left: 1px solid var(--line-strong); font-size: var(--t-12); color: var(--fg-2);
+}
+.receipt[hidden] { display: none; }
+.receipt dt { font-family: var(--sans); text-transform: uppercase; letter-spacing: .08em; font-stretch: 62%; font-variation-settings: "wdth" 62; }
+.receipt dd { margin: 0; color: var(--fg); }

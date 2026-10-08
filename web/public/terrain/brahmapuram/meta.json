@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  647617.9,
+  1102908.0,
+  651617.9,
+  1106908.0
+ ],
+ "bounds_wgs84": [
+  76.346712,
+  9.974481,
+  76.38335,
+  10.010798
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  649617.9,
+  1104908.0
+ ],
+ "site_id": "brahmapuram",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": -8.22,
+ "max_m": 57.18,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2B_43PFM_20260323_0_L2A",
+  "date": "2026-03-23",
+  "cloud_pct": 4.314337,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

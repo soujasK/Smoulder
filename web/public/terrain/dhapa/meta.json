@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32645",
+ "bounds_utm": [
+  644489.6,
+  2490989.7,
+  648489.6,
+  2494989.7
+ ],
+ "bounds_wgs84": [
+  88.404883,
+  22.518984,
+  88.444142,
+  22.555453
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  646489.6,
+  2492989.7
+ ],
+ "site_id": "dhapa",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": -2.51,
+ "max_m": 30.99,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2B_45QXF_20260413_0_L2A",
+  "date": "2026-04-13",
+  "cloud_pct": 0.047959,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

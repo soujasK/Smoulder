@@ -1,0 +1,1586 @@
+{
+ "$defs": {
+  "Brief": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "lang": {
+     "enum": [
+      "en",
+      "hi"
+     ],
+     "title": "Lang",
+     "type": "string"
+    },
+    "text": {
+     "title": "Text",
+     "type": "string"
+    },
+    "generator": {
+     "enum": [
+      "bedrock",
+      "template"
+     ],
+     "title": "Generator",
+     "type": "string"
+    },
+    "model_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Model Id"
+    },
+    "numbers_checked": {
+     "title": "Numbers Checked",
+     "type": "boolean"
+    },
+    "label": {
+     "title": "Label",
+     "type": "string"
+    },
+    "run_id": {
+     "title": "Run Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "site_id",
+    "lang",
+    "text",
+    "generator",
+    "model_id",
+    "numbers_checked",
+    "label",
+    "run_id"
+   ],
+   "title": "Brief",
+   "type": "object"
+  },
+  "BurnObs": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "episode_start": {
+     "title": "Episode Start",
+     "type": "string"
+    },
+    "scene_date": {
+     "title": "Scene Date",
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "pre",
+      "post"
+     ],
+     "title": "Kind",
+     "type": "string"
+    },
+    "hot_px": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Hot Px"
+    },
+    "burn_px": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Burn Px"
+    },
+    "area_ha": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Area Ha"
+    },
+    "area_ha_lo": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Area Ha Lo"
+    },
+    "area_ha_hi": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Area Ha Hi"
+    },
+    "cloud_pct": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Cloud Pct"
+    },
+    "note": {
+     "title": "Note",
+     "type": "string"
+    },
+    "crops": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "title": "Crops",
+     "type": "object"
+    }
+   },
+   "required": [
+    "site_id",
+    "episode_start",
+    "scene_date",
+    "kind",
+    "hot_px",
+    "burn_px",
+    "area_ha",
+    "area_ha_lo",
+    "area_ha_hi",
+    "cloud_pct",
+    "note",
+    "crops"
+   ],
+   "title": "BurnObs",
+   "type": "object"
+  },
+  "Context": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "buildings_1km": {
+     "title": "Buildings 1Km",
+     "type": "integer"
+    },
+    "buildings_3km": {
+     "title": "Buildings 3Km",
+     "type": "integer"
+    },
+    "hospitals_1km": {
+     "title": "Hospitals 1Km",
+     "type": "integer"
+    },
+    "hospitals_3km": {
+     "title": "Hospitals 3Km",
+     "type": "integer"
+    },
+    "schools_1km": {
+     "title": "Schools 1Km",
+     "type": "integer"
+    },
+    "schools_3km": {
+     "title": "Schools 3Km",
+     "type": "integer"
+    },
+    "nearest_school_m": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Nearest School M"
+    },
+    "people_1km_est": {
+     "title": "People 1Km Est",
+     "type": "integer"
+    },
+    "people_3km_est": {
+     "title": "People 3Km Est",
+     "type": "integer"
+    },
+    "schools": {
+     "items": {
+      "$ref": "#/$defs/SchoolPoint"
+     },
+     "title": "Schools",
+     "type": "array"
+    },
+    "sources": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "title": "Sources",
+     "type": "object"
+    },
+    "retrieved_on": {
+     "title": "Retrieved On",
+     "type": "string"
+    }
+   },
+   "required": [
+    "site_id",
+    "buildings_1km",
+    "buildings_3km",
+    "hospitals_1km",
+    "hospitals_3km",
+    "schools_1km",
+    "schools_3km",
+    "nearest_school_m",
+    "people_1km_est",
+    "people_3km_est",
+    "schools",
+    "sources",
+    "retrieved_on"
+   ],
+   "title": "Context",
+   "type": "object"
+  },
+  "Detection": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "det_id": {
+     "title": "Det Id",
+     "type": "string"
+    },
+    "ts_utc": {
+     "title": "Ts Utc",
+     "type": "string"
+    },
+    "date_ist": {
+     "title": "Date Ist",
+     "type": "string"
+    },
+    "source": {
+     "title": "Source",
+     "type": "string"
+    },
+    "satellite": {
+     "title": "Satellite",
+     "type": "string"
+    },
+    "confidence": {
+     "title": "Confidence",
+     "type": "string"
+    },
+    "frp_mw": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Frp Mw"
+    },
+    "scan_km": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Scan Km"
+    },
+    "track_km": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Track Km"
+    },
+    "lat": {
+     "title": "Lat",
+     "type": "number"
+    },
+    "lon": {
+     "title": "Lon",
+     "type": "number"
+    },
+    "daynight": {
+     "title": "Daynight",
+     "type": "string"
+    },
+    "tier": {
+     "enum": [
+      "A",
+      "B",
+      "C"
+     ],
+     "title": "Tier",
+     "type": "string"
+    },
+    "dist_m": {
+     "title": "Dist M",
+     "type": "number"
+    },
+    "fallback_footprint": {
+     "title": "Fallback Footprint",
+     "type": "boolean"
+    },
+    "counted": {
+     "title": "Counted",
+     "type": "boolean"
+    },
+    "low_conf_ab": {
+     "title": "Low Conf Ab",
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "site_id",
+    "det_id",
+    "ts_utc",
+    "date_ist",
+    "source",
+    "satellite",
+    "confidence",
+    "frp_mw",
+    "scan_km",
+    "track_km",
+    "lat",
+    "lon",
+    "daynight",
+    "tier",
+    "dist_m",
+    "fallback_footprint",
+    "counted",
+    "low_conf_ab"
+   ],
+   "title": "Detection",
+   "type": "object"
+  },
+  "DownwindDay": {
+   "additionalProperties": false,
+   "properties": {
+    "date_ist": {
+     "title": "Date Ist",
+     "type": "string"
+    },
+    "sites": {
+     "items": {
+      "$ref": "#/$defs/DownwindSiteDay"
+     },
+     "title": "Sites",
+     "type": "array"
+    }
+   },
+   "required": [
+    "date_ist",
+    "sites"
+   ],
+   "title": "DownwindDay",
+   "type": "object"
+  },
+  "DownwindResult": {
+   "additionalProperties": false,
+   "properties": {
+    "point": {
+     "items": {
+      "type": "number"
+     },
+     "title": "Point",
+     "type": "array"
+    },
+    "year": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Year"
+    },
+    "smoke_days": {
+     "title": "Smoke Days",
+     "type": "integer"
+    },
+    "days": {
+     "items": {
+      "$ref": "#/$defs/DownwindDay"
+     },
+     "title": "Days",
+     "type": "array"
+    },
+    "calm_days": {
+     "title": "Calm Days",
+     "type": "integer"
+    },
+    "calm": {
+     "items": {
+      "$ref": "#/$defs/DownwindDay"
+     },
+     "title": "Calm",
+     "type": "array"
+    },
+    "fire_days_nearby": {
+     "title": "Fire Days Nearby",
+     "type": "integer"
+    },
+    "no_wind_days": {
+     "items": {
+      "type": "string"
+     },
+     "title": "No Wind Days",
+     "type": "array"
+    },
+    "nearest_sites": {
+     "items": {
+      "$ref": "#/$defs/NearbySite"
+     },
+     "title": "Nearest Sites",
+     "type": "array"
+    },
+    "parameters": {
+     "additionalProperties": {
+      "type": "number"
+     },
+     "title": "Parameters",
+     "type": "object"
+    },
+    "tier": {
+     "const": "MODELLED",
+     "title": "Tier",
+     "type": "string"
+    }
+   },
+   "required": [
+    "point",
+    "year",
+    "smoke_days",
+    "days",
+    "calm_days",
+    "calm",
+    "fire_days_nearby",
+    "no_wind_days",
+    "nearest_sites",
+    "parameters",
+    "tier"
+   ],
+   "title": "DownwindResult",
+   "type": "object"
+  },
+  "DownwindSiteDay": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "detections": {
+     "title": "Detections",
+     "type": "integer"
+    },
+    "max_frp_mw": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Frp Mw"
+    },
+    "window_start_ist": {
+     "title": "Window Start Ist",
+     "type": "string"
+    },
+    "date_only_fallback": {
+     "title": "Date Only Fallback",
+     "type": "boolean"
+    },
+    "downwind_hours": {
+     "title": "Downwind Hours",
+     "type": "integer"
+    },
+    "downwind_at": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Downwind At",
+     "type": "array"
+    },
+    "calm_hours": {
+     "title": "Calm Hours",
+     "type": "integer"
+    },
+    "missing_hours": {
+     "title": "Missing Hours",
+     "type": "integer"
+    },
+    "models": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Models",
+     "type": "array"
+    }
+   },
+   "required": [
+    "site_id",
+    "name",
+    "detections",
+    "max_frp_mw",
+    "window_start_ist",
+    "date_only_fallback",
+    "downwind_hours",
+    "downwind_at",
+    "calm_hours",
+    "missing_hours",
+    "models"
+   ],
+   "title": "DownwindSiteDay",
+   "type": "object"
+  },
+  "Episode": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "start_date": {
+     "title": "Start Date",
+     "type": "string"
+    },
+    "end_date": {
+     "title": "End Date",
+     "type": "string"
+    },
+    "fire_days": {
+     "title": "Fire Days",
+     "type": "integer"
+    },
+    "span_days": {
+     "title": "Span Days",
+     "type": "integer"
+    },
+    "detections": {
+     "title": "Detections",
+     "type": "integer"
+    },
+    "max_frp_mw": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Frp Mw"
+    }
+   },
+   "required": [
+    "site_id",
+    "start_date",
+    "end_date",
+    "fire_days",
+    "span_days",
+    "detections",
+    "max_frp_mw"
+   ],
+   "title": "Episode",
+   "type": "object"
+  },
+  "FireDay": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "date_ist": {
+     "title": "Date Ist",
+     "type": "string"
+    },
+    "detections": {
+     "title": "Detections",
+     "type": "integer"
+    },
+    "tier_a": {
+     "title": "Tier A",
+     "type": "integer"
+    },
+    "tier_b": {
+     "title": "Tier B",
+     "type": "integer"
+    },
+    "low_conf_ab": {
+     "title": "Low Conf Ab",
+     "type": "integer"
+    },
+    "max_frp_mw": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Frp Mw"
+    },
+    "first_ts_utc": {
+     "title": "First Ts Utc",
+     "type": "string"
+    },
+    "satellites": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Satellites",
+     "type": "array"
+    }
+   },
+   "required": [
+    "site_id",
+    "date_ist",
+    "detections",
+    "tier_a",
+    "tier_b",
+    "low_conf_ab",
+    "max_frp_mw",
+    "first_ts_utc",
+    "satellites"
+   ],
+   "title": "FireDay",
+   "type": "object"
+  },
+  "Landmark": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "city": {
+     "title": "City",
+     "type": "string"
+    },
+    "lon": {
+     "title": "Lon",
+     "type": "number"
+    },
+    "lat": {
+     "title": "Lat",
+     "type": "number"
+    },
+    "osm": {
+     "title": "Osm",
+     "type": "string"
+    },
+    "results": {
+     "additionalProperties": {
+      "$ref": "#/$defs/DownwindResult"
+     },
+     "title": "Results",
+     "type": "object"
+    }
+   },
+   "required": [
+    "id",
+    "name",
+    "kind",
+    "city",
+    "lon",
+    "lat",
+    "osm",
+    "results"
+   ],
+   "title": "Landmark",
+   "type": "object"
+  },
+  "NearbySite": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "distance_m": {
+     "title": "Distance M",
+     "type": "integer"
+    },
+    "bearing_deg": {
+     "title": "Bearing Deg",
+     "type": "integer"
+    },
+    "bearing_compass": {
+     "title": "Bearing Compass",
+     "type": "string"
+    },
+    "fire_days": {
+     "title": "Fire Days",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "site_id",
+    "name",
+    "distance_m",
+    "bearing_deg",
+    "bearing_compass",
+    "fire_days"
+   ],
+   "title": "NearbySite",
+   "type": "object"
+  },
+  "Rank": {
+   "additionalProperties": false,
+   "properties": {
+    "score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Score"
+    },
+    "position": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Position"
+    },
+    "label": {
+     "title": "Label",
+     "type": "string"
+    },
+    "formula": {
+     "title": "Formula",
+     "type": "string"
+    }
+   },
+   "required": [
+    "score",
+    "position",
+    "label",
+    "formula"
+   ],
+   "title": "Rank",
+   "type": "object"
+  },
+  "Run": {
+   "additionalProperties": false,
+   "properties": {
+    "run_id": {
+     "title": "Run Id",
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "backfill",
+      "watch",
+      "local"
+     ],
+     "title": "Kind",
+     "type": "string"
+    },
+    "started_at": {
+     "title": "Started At",
+     "type": "string"
+    },
+    "ended_at": {
+     "title": "Ended At",
+     "type": "string"
+    },
+    "status": {
+     "title": "Status",
+     "type": "string"
+    },
+    "stages": {
+     "items": {
+      "$ref": "#/$defs/RunStage"
+     },
+     "title": "Stages",
+     "type": "array"
+    },
+    "where": {
+     "title": "Where",
+     "type": "string"
+    }
+   },
+   "required": [
+    "run_id",
+    "kind",
+    "started_at",
+    "ended_at",
+    "status",
+    "stages",
+    "where"
+   ],
+   "title": "Run",
+   "type": "object"
+  },
+  "RunStage": {
+   "additionalProperties": false,
+   "properties": {
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "started_at": {
+     "title": "Started At",
+     "type": "string"
+    },
+    "ended_at": {
+     "title": "Ended At",
+     "type": "string"
+    },
+    "status": {
+     "title": "Status",
+     "type": "string"
+    },
+    "count": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Count"
+    }
+   },
+   "required": [
+    "name",
+    "started_at",
+    "ended_at",
+    "status"
+   ],
+   "title": "RunStage",
+   "type": "object"
+  },
+  "SchoolPoint": {
+   "additionalProperties": false,
+   "properties": {
+    "osm": {
+     "title": "Osm",
+     "type": "string"
+    },
+    "name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "amenity": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Amenity"
+    },
+    "lon": {
+     "title": "Lon",
+     "type": "number"
+    },
+    "lat": {
+     "title": "Lat",
+     "type": "number"
+    },
+    "distance_m": {
+     "title": "Distance M",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "osm",
+    "name",
+    "amenity",
+    "lon",
+    "lat",
+    "distance_m"
+   ],
+   "title": "SchoolPoint",
+   "type": "object"
+  },
+  "SchoolsDownwind": {
+   "additionalProperties": false,
+   "properties": {
+    "year": {
+     "title": "Year",
+     "type": "integer"
+    },
+    "schools_considered": {
+     "title": "Schools Considered",
+     "type": "integer"
+    },
+    "schools_downwind_any_day": {
+     "title": "Schools Downwind Any Day",
+     "type": "integer"
+    },
+    "school_downwind_days": {
+     "title": "School Downwind Days",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "year",
+    "schools_considered",
+    "schools_downwind_any_day",
+    "school_downwind_days"
+   ],
+   "title": "SchoolsDownwind",
+   "type": "object"
+  },
+  "Sector": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "date_ist": {
+     "title": "Date Ist",
+     "type": "string"
+    },
+    "wind_to_deg": {
+     "items": {
+      "type": "integer"
+     },
+     "title": "Wind To Deg",
+     "type": "array"
+    },
+    "date_only_fallback": {
+     "title": "Date Only Fallback",
+     "type": "boolean"
+    },
+    "radius_km": {
+     "title": "Radius Km",
+     "type": "number"
+    },
+    "geometry": {
+     "additionalProperties": true,
+     "title": "Geometry",
+     "type": "object"
+    }
+   },
+   "required": [
+    "site_id",
+    "date_ist",
+    "wind_to_deg",
+    "date_only_fallback",
+    "radius_km",
+    "geometry"
+   ],
+   "title": "Sector",
+   "type": "object"
+  },
+  "Site": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "city": {
+     "title": "City",
+     "type": "string"
+    },
+    "city_name": {
+     "title": "City Name",
+     "type": "string"
+    },
+    "osm_id": {
+     "title": "Osm Id",
+     "type": "string"
+    },
+    "boundary_source": {
+     "enum": [
+      "osm",
+      "traced"
+     ],
+     "title": "Boundary Source",
+     "type": "string"
+    },
+    "approved": {
+     "title": "Approved",
+     "type": "boolean"
+    },
+    "demo": {
+     "title": "Demo",
+     "type": "boolean"
+    },
+    "utm_epsg": {
+     "title": "Utm Epsg",
+     "type": "integer"
+    },
+    "area_ha": {
+     "title": "Area Ha",
+     "type": "number"
+    },
+    "centroid": {
+     "items": {
+      "type": "number"
+     },
+     "title": "Centroid",
+     "type": "array"
+    },
+    "polygon": {
+     "additionalProperties": true,
+     "title": "Polygon",
+     "type": "object"
+    },
+    "context": {
+     "anyOf": [
+      {
+       "$ref": "#/$defs/Context"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "stats": {
+     "$ref": "#/$defs/SiteStats"
+    },
+    "rank": {
+     "$ref": "#/$defs/Rank"
+    },
+    "schools_downwind": {
+     "anyOf": [
+      {
+       "$ref": "#/$defs/SchoolsDownwind"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null
+    }
+   },
+   "required": [
+    "site_id",
+    "name",
+    "city",
+    "city_name",
+    "osm_id",
+    "boundary_source",
+    "approved",
+    "demo",
+    "utm_epsg",
+    "area_ha",
+    "centroid",
+    "polygon",
+    "context",
+    "stats",
+    "rank"
+   ],
+   "title": "Site",
+   "type": "object"
+  },
+  "SiteStats": {
+   "additionalProperties": false,
+   "properties": {
+    "fire_days_by_year": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "Fire Days By Year",
+     "type": "object"
+    },
+    "fire_days_365": {
+     "title": "Fire Days 365",
+     "type": "integer"
+    },
+    "detections_counted": {
+     "title": "Detections Counted",
+     "type": "integer"
+    },
+    "detections_by_tier": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "Detections By Tier",
+     "type": "object"
+    },
+    "low_conf_ab": {
+     "title": "Low Conf Ab",
+     "type": "integer"
+    },
+    "max_frp_mw": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Frp Mw"
+    },
+    "last_detection_utc": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Last Detection Utc"
+    },
+    "first_data_date": {
+     "title": "First Data Date",
+     "type": "string"
+    },
+    "data_through": {
+     "title": "Data Through",
+     "type": "string"
+    }
+   },
+   "required": [
+    "fire_days_by_year",
+    "fire_days_365",
+    "detections_counted",
+    "detections_by_tier",
+    "low_conf_ab",
+    "max_frp_mw",
+    "last_detection_utc",
+    "first_data_date",
+    "data_through"
+   ],
+   "title": "SiteStats",
+   "type": "object"
+  },
+  "Source": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "url": {
+     "title": "Url",
+     "type": "string"
+    },
+    "licence": {
+     "title": "Licence",
+     "type": "string"
+    },
+    "attribution": {
+     "title": "Attribution",
+     "type": "string"
+    },
+    "used_for": {
+     "title": "Used For",
+     "type": "string"
+    },
+    "retrieved_on": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Retrieved On"
+    }
+   },
+   "required": [
+    "id",
+    "name",
+    "url",
+    "licence",
+    "attribution",
+    "used_for"
+   ],
+   "title": "Source",
+   "type": "object"
+  },
+  "Validation": {
+   "additionalProperties": false,
+   "properties": {
+    "events": {
+     "items": {
+      "$ref": "#/$defs/ValidationEvent"
+     },
+     "title": "Events",
+     "type": "array"
+    },
+    "hits": {
+     "title": "Hits",
+     "type": "integer"
+    },
+    "total": {
+     "title": "Total",
+     "type": "integer"
+    },
+    "hit_rate": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Hit Rate"
+    },
+    "slack_days": {
+     "title": "Slack Days",
+     "type": "integer"
+    },
+    "fire_days_without_news": {
+     "title": "Fire Days Without News",
+     "type": "integer"
+    },
+    "by_site": {
+     "additionalProperties": {
+      "additionalProperties": {
+       "type": "integer"
+      },
+      "type": "object"
+     },
+     "title": "By Site",
+     "type": "object"
+    },
+    "note": {
+     "title": "Note",
+     "type": "string"
+    }
+   },
+   "required": [
+    "events",
+    "hits",
+    "total",
+    "hit_rate",
+    "slack_days",
+    "fire_days_without_news",
+    "by_site",
+    "note"
+   ],
+   "title": "Validation",
+   "type": "object"
+  },
+  "ValidationEvent": {
+   "additionalProperties": false,
+   "properties": {
+    "site_id": {
+     "title": "Site Id",
+     "type": "string"
+    },
+    "date_start": {
+     "title": "Date Start",
+     "type": "string"
+    },
+    "date_end": {
+     "title": "Date End",
+     "type": "string"
+    },
+    "outlet": {
+     "title": "Outlet",
+     "type": "string"
+    },
+    "url": {
+     "title": "Url",
+     "type": "string"
+    },
+    "window": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Window",
+     "type": "array"
+    },
+    "hit": {
+     "title": "Hit",
+     "type": "boolean"
+    },
+    "detections": {
+     "title": "Detections",
+     "type": "integer"
+    },
+    "max_frp_mw": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Frp Mw"
+    },
+    "detection_dates": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Detection Dates",
+     "type": "array"
+    }
+   },
+   "required": [
+    "site_id",
+    "date_start",
+    "date_end",
+    "outlet",
+    "url",
+    "window",
+    "hit",
+    "detections",
+    "max_frp_mw",
+    "detection_dates"
+   ],
+   "title": "ValidationEvent",
+   "type": "object"
+  },
+  "WindHour": {
+   "additionalProperties": false,
+   "properties": {
+    "ts_ist": {
+     "title": "Ts Ist",
+     "type": "string"
+    },
+    "ws_ms": {
+     "title": "Ws Ms",
+     "type": "number"
+    },
+    "wd_from_deg": {
+     "title": "Wd From Deg",
+     "type": "number"
+    },
+    "model": {
+     "title": "Model",
+     "type": "string"
+    }
+   },
+   "required": [
+    "ts_ist",
+    "ws_ms",
+    "wd_from_deg",
+    "model"
+   ],
+   "title": "WindHour",
+   "type": "object"
+  }
+ },
+ "additionalProperties": false,
+ "properties": {
+  "pipeline_run_id": {
+   "title": "Pipeline Run Id",
+   "type": "string"
+  },
+  "generated_at": {
+   "title": "Generated At",
+   "type": "string"
+  },
+  "data_through": {
+   "title": "Data Through",
+   "type": "string"
+  },
+  "sample": {
+   "title": "Sample",
+   "type": "boolean"
+  },
+  "sources": {
+   "items": {
+    "$ref": "#/$defs/Source"
+   },
+   "title": "Sources",
+   "type": "array"
+  },
+  "parameters": {
+   "additionalProperties": {
+    "additionalProperties": true,
+    "type": "object"
+   },
+   "title": "Parameters",
+   "type": "object"
+  },
+  "sites": {
+   "items": {
+    "$ref": "#/$defs/Site"
+   },
+   "title": "Sites",
+   "type": "array"
+  },
+  "detections": {
+   "items": {
+    "$ref": "#/$defs/Detection"
+   },
+   "title": "Detections",
+   "type": "array"
+  },
+  "fire_days": {
+   "items": {
+    "$ref": "#/$defs/FireDay"
+   },
+   "title": "Fire Days",
+   "type": "array"
+  },
+  "episodes": {
+   "items": {
+    "$ref": "#/$defs/Episode"
+   },
+   "title": "Episodes",
+   "type": "array"
+  },
+  "wind": {
+   "additionalProperties": {
+    "additionalProperties": {
+     "items": {
+      "$ref": "#/$defs/WindHour"
+     },
+     "type": "array"
+    },
+    "type": "object"
+   },
+   "title": "Wind",
+   "type": "object"
+  },
+  "sectors": {
+   "items": {
+    "$ref": "#/$defs/Sector"
+   },
+   "title": "Sectors",
+   "type": "array"
+  },
+  "landmarks": {
+   "items": {
+    "$ref": "#/$defs/Landmark"
+   },
+   "title": "Landmarks",
+   "type": "array"
+  },
+  "validation": {
+   "$ref": "#/$defs/Validation"
+  },
+  "briefs": {
+   "items": {
+    "$ref": "#/$defs/Brief"
+   },
+   "title": "Briefs",
+   "type": "array"
+  },
+  "burn_obs": {
+   "items": {
+    "$ref": "#/$defs/BurnObs"
+   },
+   "title": "Burn Obs",
+   "type": "array"
+  },
+  "runs": {
+   "items": {
+    "$ref": "#/$defs/Run"
+   },
+   "title": "Runs",
+   "type": "array"
+  }
+ },
+ "required": [
+  "pipeline_run_id",
+  "generated_at",
+  "data_through",
+  "sample",
+  "sources",
+  "parameters",
+  "sites",
+  "detections",
+  "fire_days",
+  "episodes",
+  "wind",
+  "sectors",
+  "landmarks",
+  "validation",
+  "briefs",
+  "burn_obs",
+  "runs"
+ ],
+ "title": "Snapshot",
+ "type": "object"
+}

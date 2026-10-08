@@ -1,0 +1,11 @@
+# Lambda image build context is the repo root (infra/template.yaml DockerContext: ..).
+# Send only what infra/Dockerfile copies.
+*
+!requirements.txt
+!pipeline/
+!api/
+!config/
+!data/
+!infra/Dockerfile
+**/__pycache__
+**/*.pyc

@@ -1,0 +1,8 @@
+# Attribution of FIRMS detections to landfill polygons (docs/METHOD.md §3)
+tier_c_radius_m: 2000          # Tier C: within this distance of the polygon, no footprint intersection; shown, never counted
+fallback_scan_km: 0.375        # used when scan/track missing (flagged fallback_footprint=true)
+fallback_track_km: 0.375
+count_low_confidence: false    # VIIRS confidence 'l' A/B detections kept in a separate column, excluded from fire days
+count_static_sources: false   # FIRMS type=2 'other static land source' (persistent industrial heat) is never a fire day
+gap_days: 1                    # episode = run of fire days with gaps of at most this many days
+timezone: Asia/Kolkata

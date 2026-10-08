@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  708672.5,
+  3179192.3,
+  712672.5,
+  3183192.3
+ ],
+ "bounds_wgs84": [
+  77.136494,
+  28.722572,
+  77.178173,
+  28.759305
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  710672.5,
+  3181192.3
+ ],
+ "site_id": "bhalswa",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": 202.05,
+ "max_m": 248.41,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2B_43RGM_20261005_0_L2A",
+  "date": "2026-10-05",
+  "cloud_pct": 5.6e-05,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

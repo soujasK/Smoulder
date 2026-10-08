@@ -1,0 +1,5 @@
+# W,S,E,N per city; frozen because raw FIRMS cache keys do not include the bbox
+{ahmedabad: [72.5131, 22.93, 72.6212, 23.0298], chennai: [80.1733, 12.9048, 80.3224,
+    13.1867], delhi: [77.1029, 28.4623, 77.3821, 28.7889], kochi: [76.3238, 9.9406,
+    76.4246, 10.0395], kolkata: [88.3703, 22.4856, 88.4796, 22.5883], mumbai: [72.874,
+    19.0135, 73.0085, 19.1734]}

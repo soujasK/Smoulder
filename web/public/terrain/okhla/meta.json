@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  721553.9,
+  3154014.9,
+  725553.9,
+  3158014.9
+ ],
+ "bounds_wgs84": [
+  77.263422,
+  28.493306,
+  77.305045,
+  28.530071
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  723553.9,
+  3156014.9
+ ],
+ "site_id": "okhla",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": 199.55,
+ "max_m": 270.21,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2B_43RGM_20261005_0_L2A",
+  "date": "2026-10-05",
+  "cloud_pct": 5.6e-05,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

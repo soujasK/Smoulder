@@ -1,0 +1,30 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  238567.7,
+  2531474.0,
+  262567.7,
+  2555474.0
+ ],
+ "bounds_wgs84": [
+  72.447925,
+  22.870766,
+  72.685749,
+  23.090965
+ ],
+ "px": 768,
+ "res_m": 31.25,
+ "smoothed_sigma_px": 2.5,
+ "centre_utm": [
+  250567.7,
+  2543474.0
+ ],
+ "site_id": "ahmedabad",
+ "kind": "city",
+ "extent_m": 24000,
+ "min_m": 26.07,
+ "max_m": 73.87,
+ "vertical_exaggeration": 6,
+ "contour_interval_m": 4,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs."
+}

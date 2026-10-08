@@ -1,0 +1,15 @@
+# 3D terrain tiles (web/public/terrain/<id>/)
+site:
+  extent_m: 4000            # ~4 x 4 km around each site
+  dem_px: 256               # 15.6 m grid (DEM is 30 m; bilinear)
+  drape_px: 400             # 10 m Sentinel-2 true colour
+  vertical_exaggeration: 3
+  contour_interval_m: 2
+city:
+  extent_m: 24000           # minimum; grows to cover all sites of the city + margin
+  margin_m: 6000
+  dem_px: 768
+  drape_px: 0               # no drape for the city background
+  smooth_px: 2.5            # gaussian sigma (px): suppresses building noise in the surface model
+  vertical_exaggeration: 6
+  contour_interval_m: 4

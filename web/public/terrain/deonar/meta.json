@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  280174.7,
+  2107660.7,
+  284174.7,
+  2111660.7
+ ],
+ "bounds_wgs84": [
+  72.910686,
+  19.049933,
+  72.94913,
+  19.086486
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  282174.7,
+  2109660.7
+ ],
+ "site_id": "deonar",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": -0.19,
+ "max_m": 37.95,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2C_43QBB_20261003_0_L2A",
+  "date": "2026-10-03",
+  "cloud_pct": 0.001971,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

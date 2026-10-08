@@ -1,0 +1,30 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  637617.9,
+  1092908.0,
+  661617.9,
+  1116908.0
+ ],
+ "bounds_wgs84": [
+  76.255154,
+  9.883674,
+  76.474979,
+  10.101579
+ ],
+ "px": 768,
+ "res_m": 31.25,
+ "smoothed_sigma_px": 2.5,
+ "centre_utm": [
+  649617.9,
+  1104908.0
+ ],
+ "site_id": "kochi",
+ "kind": "city",
+ "extent_m": 24000,
+ "min_m": -3.38,
+ "max_m": 89.7,
+ "vertical_exaggeration": 6,
+ "contour_interval_m": 4,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs."
+}

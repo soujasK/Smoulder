@@ -1,0 +1,30 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  700601.7,
+  3150103.6,
+  737601.7,
+  3187103.6
+ ],
+ "bounds_wgs84": [
+  77.048809,
+  28.455891,
+  77.434134,
+  28.795869
+ ],
+ "px": 768,
+ "res_m": 48.177083333333336,
+ "smoothed_sigma_px": 2.5,
+ "centre_utm": [
+  719101.7,
+  3168603.6
+ ],
+ "site_id": "delhi",
+ "kind": "city",
+ "extent_m": 37000.0,
+ "min_m": 193.06,
+ "max_m": 296.19,
+ "vertical_exaggeration": 6,
+ "contour_interval_m": 4,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs."
+}

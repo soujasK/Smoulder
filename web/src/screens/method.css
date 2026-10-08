@@ -1,0 +1,17 @@
+.method { padding-top: 32px; max-width: 980px; }
+.method-head h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.05; margin: 8px 0 16px; }
+.lede { font-size: var(--t-20); line-height: 1.45; max-width: 60ch; color: var(--fg); }
+.method p, .method li { max-width: 72ch; }
+.method code { font-family: var(--mono); font-size: .9em; color: var(--ember-5); }
+.toc ol { list-style: none; padding: 0; margin: 24px 0 0; columns: 2; column-gap: 24px; font-size: var(--t-14); }
+.toc li { break-inside: avoid; padding: 3px 0; border-bottom: 1px solid var(--line); }
+.toc a { text-decoration: none; }
+.toc .mono { color: var(--fg-2); margin-right: 6px; }
+.formula { font-family: var(--mono); font-size: 12.5px; line-height: 1.6; background: var(--bg-2); border-left: 1px solid var(--ember-3); padding: 12px 14px; overflow-x: auto; white-space: pre; margin: 0 0 14px; }
+.tiers { display: grid; grid-template-columns: max-content 1fr; gap: 10px 16px; align-items: baseline; }
+.tiers dd { margin: 0; }
+.sources { padding-left: 18px; }
+.sources li { margin-bottom: 8px; }
+@media (max-width: 600px) { .toc ol { columns: 1; } }
+.method-wrap, .method code, .sources li { overflow-wrap: anywhere; }
+.method { overflow-x: hidden; }

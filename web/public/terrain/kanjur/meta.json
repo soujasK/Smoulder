@@ -1,0 +1,36 @@
+{
+ "crs": "EPSG:32643",
+ "bounds_utm": [
+  282455.5,
+  2113827.6,
+  286455.5,
+  2117827.6
+ ],
+ "bounds_wgs84": [
+  72.931661,
+  19.105874,
+  72.970115,
+  19.142424
+ ],
+ "px": 256,
+ "res_m": 15.625,
+ "centre_utm": [
+  284455.5,
+  2115827.6
+ ],
+ "site_id": "kanjur",
+ "kind": "site",
+ "extent_m": 4000,
+ "min_m": 0.0,
+ "max_m": 29.99,
+ "vertical_exaggeration": 3,
+ "contour_interval_m": 2,
+ "dem": "Copernicus DEM GLO-30 (AWS Open Data). Elevation data vintage 2011-2015 (TanDEM-X); landfill height today differs.",
+ "drape": {
+  "scene": "S2C_43QBB_20261003_0_L2A",
+  "date": "2026-10-03",
+  "cloud_pct": 0.001971,
+  "res_m": 10.0,
+  "credit": "Contains modified Copernicus Sentinel data 2026"
+ }
+}

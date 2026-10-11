@@ -2,28 +2,34 @@
 
 **India's city landfills catch fire and burn next to homes and schools. Smoulder turns free satellite fire detections and wind records into a dated fire record for each landfill, tells any resident how many days their area was downwind of a detected landfill fire, and emails them when a site lights up and the wind is blowing their way.**
 
-Built for Environmental Hacks (Bharat Builds Tour, WeMakeDevs × AWS Builder Center), Track 03: Waste and Energy.
+Built for Environmental Hacks (Bharat Builds Tour, WeMakeDevs × AWS Builder Center), Track 01: Air.
 
 | Who | Input | Output |
 |---|---|---|
-| Resident | an address, landmark or PIN code | **Smoke Days**: "From 2019 to 8 Oct 2026, Bhalaswa was downwind of a detected landfill fire on **10 days**" (MODELLED), with the nearest sites, a calendar and a receipt for every day |
+| Resident | an address, landmark or PIN code | **Smoke Days**: "From 2019 to 11 Oct 2026, Bhalaswa was downwind of a detected landfill fire on **10 days**" (MODELLED), with the nearest sites, a calendar and a receipt for every day |
 | Resident (subscribed) | email + location (rounded to ~100 m) | **Downwind alert**: "Fire detected at <site> at <time IST>. Wind toward your area for about <h> hours." |
 | Journalist, researcher, official | a landfill site | **Fire Record**: detection calendar, fire days per year, episodes, Burn Scan, neighbours, detected vs news-reported days, sources; printable A4 |
 | Official | the site list | **Ranking** by fire days × people nearby, with the formula visible |
 
-## What the data says (real numbers, 1 Jan 2019 to 8 Oct 2026)
+## What the data says (real numbers, 1 Jan 2019 to 11 Oct 2026)
 
 | Site | City | Area | Fire days (Tier A/B) | Counted detections |
 |---|---|---|---|---|
+| Dhapa | Kolkata | 61.3 ha | 47 | 83 |
+| Kodungaiyur | Chennai | 127.6 ha | 18 | 30 |
 | Bhalswa | Delhi | 27.9 ha | 14 | 27 |
 | Ghazipur | Delhi | 29.2 ha | 7 | 8 |
 | Brahmapuram | Kochi | 24.5 ha (traced) | 7 | 26 |
 | Deonar | Mumbai | 127.1 ha | 7 | 12 |
+| Perungudi | Chennai | 104.1 ha | 7 | 19 |
 | Okhla | Delhi | 25.8 ha | 1 | 1 |
 | Kanjur | Mumbai | 142.5 ha | 0 | 0 |
+| **9 sites** | **5 cities** | | **108** | **206** |
 
-- 4 of 6 linked news-reported fires have a counted detection within ±1 day (Ghazipur 28 Mar 2022 and 21 Apr 2024, Bhalswa 26 Apr 2022, Brahmapuram 2 Mar 2023). 30 detected fire days have no report in our (short) list.
-- Brahmapuram, 4 Mar 2023: Sentinel-2 shows 3.96 ha (1.32–6.60) of burn-like change inside the boundary and 6 hot-surface pixels.
+- 5 of 8 linked news-reported fires have a counted detection within ±1 day (two at Ghazipur, one each at Bhalswa, Brahmapuram and Perungudi; misses at Ghazipur, Okhla and Kodungaiyur are listed in [docs/GATE.md](docs/GATE.md)). 101 of the 108 detected fire days have no report in our (short) list.
+- Pirana (Ahmedabad) was evaluated and left out: NASA flags most of its recent detections as a static industrial heat source (FIRMS `type=2`), so they are not fire days. Static sources are never counted at any site.
+- Brahmapuram (Kochi), March 2023 fire: Sentinel-2 shows 3.96 ha (1.32–6.60) of burn-like change inside the boundary and 6 hot-surface pixels.
+- Perungudi (Chennai), April 2022 fire: Sentinel-2 shows 17.56 ha (10.60–24.52) of burn-like change between clear scenes before and after.
 - The numbers are small. Satellites pass about twice a day, pixels are larger than parts of each site, and smouldering below the surface is often invisible. Smoulder shows what was detected and says what it cannot see.
 
 ## Run it

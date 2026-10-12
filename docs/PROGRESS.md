@@ -1,11 +1,11 @@
-# Progress (8 Oct 2026)
+# Progress (12 Oct 2026)
 
 ## Done
-- **M1 Gate: PASS.** 3 of 5 Delhi news events have a counted detection within ±1 day (`docs/GATE.md`). All cities: 4 of 6.
-- **M2 Core data:** 6 sites (Brahmapuram traced); FIRMS 2019 → today (2,276 requests, cached); attribution A/B/C; fire days and episodes; Open-Meteo wind per fire day; downwind sectors; Smoke Days for 21 public stations; OSM + WorldPop context; ranking; schools downwind; snapshot + Pydantic/TS contract.
+- **M1 Gate: PASS.** 3 of 5 Delhi news events have a counted detection within ±1 day (`docs/GATE.md`). All cities: 5 of 8 (after three more sites were added).
+- **M2 Core data:** 6 sites at first, 9 now (Brahmapuram traced); FIRMS 2019 → today (2,276 requests, cached); attribution A/B/C; fire days and episodes; Open-Meteo wind per fire day; downwind sectors; Smoke Days for public stations (33 now); OSM + WorldPop context; ranking; schools downwind; snapshot + Pydantic/TS contract.
 - **M3 Offline web:** Smoke Days (with "All years"), Atlas (MapLibre on self-hosted PMTiles; plan fallback without WebGL), Fire Record, Method, Pipeline, A4 print sheets, Hindi UI, Demo Mode.
 - **M4 3D:** Copernicus DEM terrain with contour shader, Sentinel-2 drape, ember columns (shader-animated), wind wedges, pixel-truth footprints, graticule, scale bar, north arrow, VE label; still-image fallback for no WebGL / reduced motion.
-- **M5–M7 code (not deployed):** SAM template (S3, 11 DynamoDB tables, container Lambdas, Backfill and Watch state machines, EventBridge Scheduler, SNS, HTTP API with IAM-only replay, CloudWatch dashboard and alarms, Budget); Step Functions task handlers; Watch/alert path with idempotency and REPLAY labelling; HTTP API (Amazon Location geocoding, no persistence); Bedrock briefs with number check and template fallback; Burn Scan (dNBR, hot-surface heuristic, crops).
+- **M5–M7 code (deployed, see below):** SAM template (S3, 11 DynamoDB tables, container Lambdas, Backfill and Watch state machines, EventBridge Scheduler, SNS, HTTP API with IAM-only replay, CloudWatch dashboard and alarms, Budget); Step Functions task handlers; Watch/alert path with idempotency and REPLAY labelling; HTTP API (Amazon Location geocoding, no persistence); Bedrock briefs with number check and template fallback; Burn Scan (dNBR, hot-surface heuristic, crops).
 - **Tests:** 43 pytest (parsers, UTC→IST, tiers at boundaries, low confidence, gap rule, downwind at ±30°, calm, R cutoff, date-only fallback, validation, alerts idempotent/REPLAY/not-downwind, API smoke-days matches precompute and writes nothing, rate limit, briefs number check and banned words, contract); 11 vitest (schema contract, copy lint EN/HI/briefs/JSX, every `[data-metric]` has tier + receipt, "no detections" years). 360 px: no horizontal scroll on Home, Sites, Site, Method, Pipeline (Playwright). `cfn-lint` clean.
 
 ## Not done

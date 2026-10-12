@@ -253,11 +253,12 @@ def replay(det_id: str, sub_id: str | None = None) -> dict:
 
     repo = DynamoRepo()
     if sub_id:
-        only = [s for s in repo.subscribers() if s["sub_id"] == sub_id]
+        base = repo  # keep the real repo: `repo` is rebound to the wrapper below
+        only = [s for s in base.subscribers() if s["sub_id"] == sub_id]
 
         class One:
             def __getattr__(self, k):
-                return getattr(repo, k)
+                return getattr(base, k)
 
             def subscribers(self):
                 return only

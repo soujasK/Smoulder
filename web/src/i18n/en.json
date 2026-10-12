@@ -105,5 +105,8 @@
   "record.legend.day": "fire day (satellite)",
   "record.legend.news": "also reported in the news",
   "record.legend.height": "height: detections that day · glow: fire radiative power",
-  "home.sub": "Satellites see the fires at nine landfills in five cities. The wind decides where the smoke goes. Type a place to see how often it was downwind."
+  "home.sub": "Satellites see the fires at nine landfills in five cities. The wind decides where the smoke goes. Type a place to see how often it was downwind.",
+  "home.outside.near": "{place} is outside Smoulder's coverage. The nearest monitored landfill is {site}, about {km} km to the {dir}.",
+  "home.outside.why": "Smoke days are only counted within {r} km of a monitored landfill, so this place has no count.",
+  "home.outside.link": "See the {site} fire record"
 }

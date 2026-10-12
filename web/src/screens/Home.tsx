@@ -33,6 +33,7 @@ export function Home() {
   const [answer, setAnswer] = useState<Answer | null>(null);
   const [status, setStatus] = useState<SmokeDaysResponse['status'] | 'idle' | 'loading' | 'error'>('idle');
   const [candidates, setCandidates] = useState<{ label: string; lon: number; lat: number }[]>([]);
+  const [outside, setOutside] = useState<{ label: string; siteId: string; site: string; km: number; dir: string } | null>(null);
   const [pickDay, setPickDay] = useState<string | null>(null);
   const reduced = useReducedMotion();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -60,6 +61,7 @@ export function Home() {
     if (!d || !text.trim()) return;
     setPickDay(null);
     setCandidates([]);
+    setOutside(null);
     // A curated public station (Demo Mode, sample links) always resolves to its own point, never a geocoder's guess.
     const exact = d.landmarks.find((l) => l.name.toLowerCase() === text.trim().toLowerCase());
     if (liveEnabled && !exact) {
@@ -68,6 +70,7 @@ export function Home() {
         const r = await fetchSmokeDays(text, y);
         setStatus(r.status);
         if (r.status === 'ambiguous') setCandidates(r.candidates);
+        if (r.status === 'outside_coverage' && r.candidates?.length) setOutside(nearestSite(d, r.candidates[0]));
         if (r.status === 'ok' && r.result) {
           const near = r.result.nearest_sites[0];
           setAnswer({ label: r.label, result: r.result, city: near ? d.siteById[near.site_id].city : 'delhi', lon: r.result.point[0], lat: r.result.point[1], sample: r.sample });
@@ -192,7 +195,12 @@ export function Home() {
 
           {status === 'loading' && <div aria-busy className="skeleton" />}
           {status === 'not_found' && <p className="home-msg">{t('home.notfound')}</p>}
-          {status === 'outside_coverage' && <p className="home-msg">{t('home.outside', { r: r.radius_km, sites: d.sites.map((s) => s.name).join(', ') })}</p>}
+          {status === 'outside_coverage' && (outside ? (
+            <div className="home-msg home-outside">
+              <p>{t('home.outside.near', { place: outside.label, site: outside.site, km: outside.km, dir: outside.dir })}</p>
+              <p className="small muted">{t('home.outside.why', { r: r.radius_km })} <Link to={`/site/${outside.siteId}`}>{t('home.outside.link', { site: outside.site })} →</Link></p>
+            </div>
+          ) : <p className="home-msg">{t('home.outside', { r: r.radius_km, sites: d.sites.map((s) => s.name).join(', ') })}</p>)}
           {status === 'error' && <p className="home-msg">{t('state.error', { date: dateLabel(d.data_through, lang) })}</p>}
           {status === 'ambiguous' && (
             <div className="home-msg">
@@ -280,12 +288,12 @@ export function Home() {
                     <tbody>
                       {[...res.days, ...(picked && !smokeSet.has(picked.date_ist) ? [picked] : [])].map((dd) => dd.sites.map((s, i) => (
                         <tr key={dd.date_ist + s.site_id} className={pickDay === dd.date_ist ? 'is-picked' : ''}>
-                          <td className="num">{i === 0 ? dateLabel(dd.date_ist, lang) : ''}</td>
-                          <td>{s.name}</td>
-                          <td className="num r">{s.detections}</td>
-                          <td className="num r">{hourIST(s.window_start_ist)}</td>
-                          <td className="num r">{s.downwind_hours}/{r.window_hours} h</td>
-                          <td className="tiny muted">{windText(d, s.site_id, dd.date_ist)} · {s.models.join(', ')}</td>
+                          <td className="num" data-label="Date">{i === 0 ? dateLabel(dd.date_ist, lang) : ''}</td>
+                          <td data-label="Site">{s.name}</td>
+                          <td className="num r" data-label="Detections">{s.detections}</td>
+                          <td className="num r" data-label="First seen (IST)">{hourIST(s.window_start_ist)}</td>
+                          <td className="num r" data-label="Downwind">{s.downwind_hours}/{r.window_hours} h</td>
+                          <td className="tiny muted" data-label="Wind">{windText(d, s.site_id, dd.date_ist)} · {s.models.join(', ')}</td>
                         </tr>
                       )))}
                     </tbody>
@@ -352,6 +360,28 @@ function pulse(res: DownwindResult | null, now: number, idx: (iso: string) => nu
   }
   return 0;
 }
+
+/** Nearest monitored landfill to a point outside coverage: distance from the point to the site, and which way the site lies. */
+function nearestSite(d: Indexed, p: { label: string; lon: number; lat: number }) {
+  const R = 6371, rad = Math.PI / 180;
+  let best: { label: string; siteId: string; site: string; km: number; dir: string } | null = null;
+  let bestKm = Infinity;
+  for (const s of d.sites) {
+    const [lon, lat] = s.centroid;
+    const dLat = (lat - p.lat) * rad, dLon = (lon - p.lon) * rad;
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(p.lat * rad) * Math.cos(lat * rad) * Math.sin(dLon / 2) ** 2;
+    const km = 2 * R * Math.asin(Math.sqrt(a));
+    if (km < bestKm) {
+      const y = Math.sin(dLon) * Math.cos(lat * rad), x = Math.cos(p.lat * rad) * Math.sin(lat * rad) - Math.sin(p.lat * rad) * Math.cos(lat * rad) * Math.cos(dLon);
+      const brg = ((Math.atan2(y, x) / rad) + 360) % 360;
+      bestKm = km;
+      best = { label: p.label, siteId: s.site_id, site: s.name, km: Math.round(km), dir: COMPASS_WORDS[Math.round(brg / 45) % 8] };
+    }
+  }
+  return best;
+}
+
+const COMPASS_WORDS = ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'];
 
 const COMPASS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
 

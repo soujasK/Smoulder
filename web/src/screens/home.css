@@ -58,3 +58,26 @@
 .answer-sec > .label { display: block; margin-bottom: 10px; color: var(--haze); }
 .receipts { font-size: var(--t-12); }
 .receipts .is-picked td { background: var(--ember-1); }
+
+/* out-of-coverage hint */
+.home-outside { background: var(--haze-wash); border: 1px solid var(--haze-soft); }
+.home-outside p { margin: 0 0 6px; }
+.home-outside p:last-child { margin: 0; }
+
+/* receipts become stacked cards on phones: no sideways scrolling */
+@media (max-width: 600px) {
+  table.receipts thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  table.receipts, table.receipts tbody, table.receipts tr, table.receipts td { display: block; width: 100%; }
+  table.receipts tr { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); padding: 8px 12px; margin-bottom: 8px; }
+  table.receipts tr:hover td { background: transparent; }
+  table.receipts td { display: flex; justify-content: space-between; gap: 12px; border: 0; padding: 3px 0; text-align: right; font-size: var(--t-14); }
+  table.receipts td::before { content: attr(data-label); color: var(--fg-2); font-size: var(--t-12); text-align: left; flex: none; }
+  table.receipts td:empty { display: none; }
+  table.receipts td[data-label="Date"] { font-weight: 600; color: var(--ember-5); }
+  table.receipts td[data-label="Wind"] { flex-direction: column; text-align: left; gap: 2px; }
+}
+@media (max-width: 600px) {
+  table.receipts td::before { font-family: var(--sans); letter-spacing: 0; }
+  table.receipts td { padding: 2px 0; }
+  table.receipts tr { padding: 10px 14px; }
+}
